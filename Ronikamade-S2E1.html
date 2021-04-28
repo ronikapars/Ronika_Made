@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>سطل زباله هوشمند</title>
+              
+              <style>
+
+                            .pageTitle-container{
+                                          width: 100%;
+                                          text-align: center;
+                            }
+                            .pageTitle-title{
+                                          font-size: 35px;
+                                          padding-top: 30px;
+                                           color: rgb(48, 86, 129);
+                            }
+                            .pageButton-buttonContainer{
+                                          text-align: center;
+                                         
+                            }
+                            .pageButton-openButton{
+                                          width: 110px;
+                                          height: 110px;
+                                          border-radius: 100%;
+                                          border: 4px lightgreen solid;
+                                          color: lightgreen;
+                                          background: white;
+                                          font-size: 20px;
+                                          
+                                          box-shadow: 0px 0px 8px lightgrey;
+                            }
+
+                            .pageButton-closeButton{
+                                          width: 110px;
+                                          height: 110px;
+                                          border-radius: 100%;
+                                          border: 4px #f44336 solid;
+                                          color: #f44336;
+                                          background: white;
+                                          font-size: 20px;
+                                          
+                                          box-shadow: 0px 0px 8px lightgrey;
+                            }
+
+                            .toggle-button-cover
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 140px;
+    box-sizing: border-box;
+}
+
+.button-cover
+{
+    height: 100px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 4px;
+}
+
+.button-cover:before
+{
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #d7e3e3;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+}
+
+.button-cover, .knobs, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button
+{
+    position: relative;
+    top: 50%;
+    width: 115px;
+    height: 48px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+    border-radius: 100px;
+}
+
+.button.b2
+{
+    border-radius: 2px;
+}
+
+.checkbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+/* Button 1 */
+#button-1 .knobs:before
+{
+    padding-top: 10px;
+    content: 'Auto';
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    width: 49px;
+    height: 20px;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1;
+    /* font-weight: bold; */
+    padding: 9px 4px;
+    background-color: #03A9F4;
+    border-radius: 20px;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked + .knobs:before
+{
+    content: 'Manual';
+    left: 54px;
+    background-color: #f44336;
+}
+
+#button-1 .checkbox:checked ~ .layer
+{
+    background-color: #fcebeb;
+}
+#button-1 .knobs{
+              padding-top: 10px;
+}
+#button-1 .knobs, #button-1 .knobs:before, #button-1 .layer
+{
+    transition: 0.3s ease all;
+}
+
+
+
+              </style>
+
+</head>
+<body>
+
+              <div class="pageTitle-container">
+                            <h4 class="pageTitle-title">سطل زباله هوشمند</h4>
+              </div>
+              <div class="pageButton-buttonContainer">
+             
+             <form  >
+                 <button type="submit" value="open" name="btn" class="pageButton-openButton">Open</button>
+                 <!-- <button type="submit" value="close" name="btn" class="pageButton-closeButton">Close</button> -->
+             
+              <div class="toggle-button-cover">
+              <div class="">
+              <div class="button r" id="button-1">
+              <input type="checkbox" name="auto" class="checkbox">
+              <div class="knobs"></div>
+              <div class="layer"></div>
+              </div>
+              </div>
+              </div>
+             
+              </form>
+
+
+                            
+             
+             
+              </div>
+      
+</body>
+</html>
